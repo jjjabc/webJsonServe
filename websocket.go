@@ -25,7 +25,7 @@ func NewSocket(kind string) *Socket {
 	s := new(Socket)
 	s.Kind = kind
 	s.clients = make(map[string]WS)
-	s.Handler = websocket.Handler(s)
+	s.Handler = websocket.Handler(s.PushHandler)
 	return s
 }
 
@@ -44,7 +44,7 @@ func (s *Socket) pushHandler(kind string, ws *websocket.Conn) {
 		}
 	}
 }
-func (s *Socket) StatePushHandler(ws *websocket.Conn) {
+func (s *Socket) PushHandler(ws *websocket.Conn) {
 	s.pushHandler(s.Kind, ws)
 }
 func (s *Socket) Push(v interface{}) {
