@@ -40,7 +40,6 @@ func ServeSuccess(c *beego.Controller, des string, data interface{}) {
 		raw := json.RawMessage(b)
 		rJSON.Data = &raw
 	}
-
 	c.Ctx.Output.SetStatus(200)
 	c.Data["json"] = rJSON
 	c.ServeJSON()
