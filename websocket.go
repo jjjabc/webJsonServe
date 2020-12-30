@@ -2,7 +2,7 @@ package webJsonServe
 
 import (
 	"fmt"
-	"github.com/astaxie/beego"
+	beego "github.com/beego/beego/v2/adapter"
 	"golang.org/x/net/websocket"
 	"log"
 	"sync"
