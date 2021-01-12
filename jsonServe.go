@@ -2,7 +2,7 @@ package webJsonServe
 
 import (
 	"encoding/json"
-	beego "github.com/beego/beego/v2/adapter"
+	beego "github.com/beego/beego/v2/server/web"
 	"github.com/jjjabc/webJsonServe/models"
 )
 
